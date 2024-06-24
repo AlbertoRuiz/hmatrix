@@ -116,6 +116,7 @@ library
             extra-libraries:    openblas
         else
             extra-libraries:    blas lapack
+            frameworks: Accelerate
 
         if !flag(disable-default-paths)
             extra-lib-dirs: /opt/local/lib/
@@ -124,7 +125,6 @@ library
             include-dirs: /usr/local/include/
         if arch(i386)
             cc-options: -arch i386
-        frameworks: Accelerate
 
     if os(freebsd)
         if flag(openblas)
